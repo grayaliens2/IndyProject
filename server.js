@@ -52,7 +52,7 @@ app.post('/asktest', (req, res) => {
   });
 });
 
-app.post('/askreview', (req, res) => {
+app.post('/askreviewtest', (req, res) => {
   var artnme = req.body.sname;
   var sql = "SELECT * from reviews where Artist = '"+artnme+"';";
   db.query(sql, function(err, result){
