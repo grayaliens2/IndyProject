@@ -22,11 +22,11 @@ app.use(express.static(__dirname + '/'));
 app.use(express.static('./resources'));
 
 const db = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "AZza2163$",
+  host: "us-cdbr-east-03.cleardb.com",
+  user: "b4124ed7cb3c31",
+  password: "0459d3f0",
   multipleStatements: true,
-  database: "mydb",
+  database: "heroku_f2be744910a56fc",
 });
 
 
