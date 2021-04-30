@@ -38,9 +38,7 @@ app.get('/',function (req, res) {
 });
 
 
-
-
-app.post('/ask', (req, res) => {
+app.post('/asktest', (req, res) => {
   var art_name = req.body.artname;
   if (typeof art_name !== 'string') return res.status(405).send("Please use a String.");
   else res.status(200).send("success");
@@ -65,6 +63,38 @@ app.post('/askreview', (req, res) => {
   }
   else{
     res.status(200).send("success");
+    res.render('pages/reviews', {
+      my_title: 'Reviews Page',
+      data: result
+    });
+  }
+});
+});
+
+
+
+
+app.post('/ask', (req, res) => {
+  var art_name = req.body.artname;
+  url = "https://www.theaudiodb.com/api/v1/json/1/search.php?s=" + art_name;
+  axios.get(url)
+  .then((response) =>{
+    res.render('pages/home', {
+      my_title: 'Home Page',
+      data: response.data
+    });
+  });
+});
+
+app.post('/askreview', (req, res) => {
+  var artnme = req.body.sname;
+  var sql = "SELECT * from reviews where Artist = '"+artnme+"';";
+  db.query(sql, function(err, result){
+  if(err){
+    console.log('error', err);
+    res.redirect("/reviews");
+  }
+  else{
     res.render('pages/reviews', {
       my_title: 'Reviews Page',
       data: result
