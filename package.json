@@ -1,7 +1,7 @@
 {
-  "name": "Ross Panning Individual Project",
+  "name": "RossPanningIndividualProject",
   "version": "1.0.0",
-  "description": "Some cunt assignment to fuck off with",
+  "description": "Project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
