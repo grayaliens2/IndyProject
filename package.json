@@ -1,0 +1,22 @@
+{
+  "name": "Ross Panning Individual Project",
+  "version": "1.0.0",
+  "description": "Some cunt assignment to fuck off with",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mocha": "^8.3.2",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7",
+    "query-string": "^7.0.0"
+  }
+}

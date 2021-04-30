@@ -1,0 +1,45 @@
+<%- include('../partials/head')-%>
+<%- include('../partials/nav')-%>
+<body>
+  <div class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+
+      <form action="/askreview" method="POST">
+        <div class="form-group">
+          <label for="artist name">Search for Artist Name</label>
+          <input type="text" class="form-control" id="sname" name = "sname" placeholder="Artist Name"/>
+        </div>
+
+
+        <input type="submit" value="Click here to submit the form"/>
+      </form>
+
+
+    </div>
+  </div>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Artist</th>
+        <th scope="col">Review</th>
+        <th scope="col">Review Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (data){
+      var dime = '';
+      data.forEach(function(item){
+        dime += '<tr><td>'+item.Artist+'</td><td>'+item.Review+'</td><td>'+item.Date+'</td></tr>'
+      });
+      var hold = '<p>"asdsad"</p>'
+      %>
+      <%- dime %>
+    <% } %>
+
+
+    </tbody>
+  </table>
+
+</body>
+</html>
